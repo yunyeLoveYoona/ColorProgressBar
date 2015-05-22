@@ -64,7 +64,18 @@ public class CountDownProgressBar extends View{
     }
     public void show(){
         setVisibility(VISIBLE);
-        progress = 0;
-        invalidate();
+        ValueAnimator valueAnimator=ValueAnimator.ofFloat(0,360);
+        valueAnimator.setDuration(TIME);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                progress=(float)animation.getAnimatedValue();
+                invalidate();
+                if(progress==360){
+                    setVisibility(GONE);
+                }
+            }
+        });
+        valueAnimator.start();
     }
 }
