@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="progresbae_color">#0176B5</color>
+    <color name="progresbae_color">#FF4B01</color>
+    <color name="progresbae_text_color">#FF4B01</color>
 </resources>
